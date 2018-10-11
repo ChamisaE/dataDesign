@@ -7,6 +7,90 @@
 	<body>
 		<h1>Data Design Project</h1>
 		<h2>User Persona</h2>
-		<a href="john-stock.html"></a>
+		<img src="JohnStockman.jpg">
+		<ul style="list-style-type:none">
+			<li><strong>Name: </strong>
+				John Stockman</li>
+			<li><strong>Age: </strong>
+				30</li>
+			<li><strong>Sex: </strong>
+				Male</li>
+			<li><strong>Ethnicity: </strong>
+				White</li>
+			<li><strong>Occupation: </strong>
+				 Mid-level Mechanical Engineer at Boeing/Space Hobbiest</li>
+			<li><strong>Technology:</strong><br/>
+				iPhone 7 Plus,  Apple airpods,
+				ASUS K52JR (15 inch, 2010) Intel Core i5 M430 2.27GHz<br/>
+				4GB RAM AMD Radeon HD 5470 500GB (bought it in college)</li>
+			<li><strong>Attitude: </strong><br/>
+				Uses phone for social apps. Doesn't see a reason to upgrade personal<br/>
+				laptop because he's managed to fix everything so far...kinda. Loves space and MATLAB.<br/>
+				Hopes to one day be Elon Musk, but will settle for working for him too.</li>
+			<li><strong>Frustrations:</strong><br/>
+				No mobile app option (laptop is slow to load dynamic content)<br/>
+				No way to customize content to his preferences (only reads SpaceX articles) </li>
+		</ul>
+		<h2>User Story</h2>
+		<ul style="list-style-type:none">
+			John Stockman would like to mainly see SpaceX content.
+		</ul>
+		<h2>Use Case</h2>
+		<ul style="list-style-type:none">
+			<li><strong>Case:</strong> Facebook-ing a technical article of recent SpaceX launch via laptop.</li><br/>
+			<li><strong>Description:</strong> Johnny Boy wants to quickly see a credible and technical
+				article about how yesterday's launch went.</li><br/>
+			<li><strong>Name of user and user role:</strong> John, SpaceX superfan, avid article reader.</li><br/>
+			<li><strong>Usage preconditions:</strong> Laptop must still be working, and be connected to internet.</li><br/>
+			<li><strong>Useage postconditions:</strong></li><br/>
+			<li><strong>Interaction flow:</strong></li><br/>
+			<ul>
+				<li type="disc">John enters space.com in his web browser.</li><br/>
+				<li type="disc">The server returns today's Space.com main page.</li><br/>
+				<li type="disc">John clicks the spaceflight tab at the top of the page.</li><br/>
+				<li type="disc">Server returns today's page with today's spaceflight news.</li><br/>
+				<li type="disc">John filters results to find all articles that have been written about SpaceX.</li><br/>
+				<li type="disc">Server reloads page with new filter constraint.</li><br/>
+				<li type="disc">John clicks link for most recent article about Falcon launch.</li><br/>
+				<li type="disc">Server loads link in new page.</li><br/>
+				<li type="disc">John reads article.</li><br/>
+				<li type="disc">Server loads a popup window to prompt John to log into facebook and create/edit new post.</li><br/>
+				<li type="disc">John signs into facebook and writes his most professional opinion about the current state<br/>
+					of for profit space travel. Then clicks 'post'.</li><br/>
+				<li type="disc">Server posts article and John's opinion to facebook profile. Thank you, John.</li><br/>
+			</ul>
+			<li><strong>Frequency of use:</strong> EVERY.SINGLE.DAY. <li><br/>
+		</ul>
+		<h2>Conceptual Model</h2>
+		<h3>Entities and Attributes:</h3>
+		<h4>Author</h4>
+		<ul>
+			<li type="disc"> authorId (primary)</li>
+			<li type="disc">firstName</li>
+			<li type="disc">lastName</li>
+		</ul>
+		<h4>Search Filter</h4>
+		<ul>
+			<li type="disc">filterId (primary)</li>
+			<li type="disc">filterType</li>
+			<li type="disc">filterNumberApplied</li>
+			<li type="disc">filterAddRemove</li>
+		</ul>
+		<h4>Article List</h4>
+		<ul>
+			<li type="disc">articleId (primary)</li>
+			<li type="disc">articleFilterId (foreign)</li>
+			<li type="disc">articleAuthorId (foreign)</li>
+			<li type="disc">articleDatePublished</li>
+			<li type="disc">articleDescription</li>
+			<li type="disc">articleTitle</li>
+		</ul>
+		<h4>Relations</h4>
+		<ul style="list-style-type: none">
+		<li>Space.com is the only one that can post content to Space.com. (1 to n)</li>
+		<li>Many users can apply many filters to article searches. (m to n)</li>
+		</ul>
+		<h2>Entity Relationship Diagram</h2>
+		<img src="ERDdataDesign.png">
 	</body>
 </html>
