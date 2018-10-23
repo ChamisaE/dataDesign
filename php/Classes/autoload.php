@@ -16,7 +16,7 @@ spl_autoload_register(function($class) {
 //	 * baseDir: the base directory for all classes (default = current directory)
 //	 **/
 
-$prefix = "Cedmo\DataDesign";
+$prefix = "Cedmo\\DataDesign";
 $baseDir = __DIR__;
 
 //	// does the class use the namespace prefix?

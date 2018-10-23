@@ -97,11 +97,11 @@ public function getArticleAuthorId() : Uuid {
  */
 public function setArticleAuthorId( $newArticleAuthorId) : void {
 	try {
-		$Uuid = self::validateUuid($newArticleAuthorId);
+		$newArticleAuthorId = self::validateUuid($newArticleAuthorId);
 		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
 }
 //convert and store the tweet id
-$this->tweetId = $Uuid;
+$this->articleAuthorId = $newArticleAuthorId;
 	}
 	/*
 	 * accessor method for article id
