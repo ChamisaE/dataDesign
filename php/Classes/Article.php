@@ -293,11 +293,11 @@ articleDatePublished = :articleDatePublished, articleDescription = :articleDescr
 
 	$parameters = ["articleAuthorId" => $this->articleAuthorId->getBytes(),"articleId" => $this->articleId->getBytes(),
 		"articleFilterId" => $this->articleFilterId->getBytes(), "articleDatePublished" => $this->articleDatePublished->getBytes(),
-		"articleDescription" => $this->articleDescription->getBytes(), "articleTitle" => $this->articleTitle->getBytes();]
+		"articleDescription" => $this->articleDescription->getBytes(), "articleTitle" => $this->articleTitle->getBytes()];
 
 	
 $statement->execute($parameters);
-};
+}
 
 /**
 * gets the Article by articleId
@@ -331,7 +331,7 @@ $statement->setFetchMode(\PDO::FETCH_ASSOC);
 $row = $statement->fetch();
 if($row !== false) {
 $article = new Tweet($row["articleId"], $row["articleAuthorId"], $row["articleFilterId"],
-	$row["articleDatePublished", $row["articleDescription"], $row["articleTitle"]);
+	$row["articleDatePublished"], $row["articleDescription"], $row["articleTitle"]);
 }
 } catch(\Exception $exception) {
 // if the row couldn't be converted, rethrow it
