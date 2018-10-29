@@ -225,7 +225,7 @@ public function setArticleTitle( $newArticleTitle) : void {
 //verify the article title is secure
 	$newArticleTitle = trim($newArticleTitle);
 	$newArticleTitle = filter_var($newArticleTitle, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-	if(empty($newArticleTitle) === true){
+	if(empty($newArticleTitle) === true) {
 		throw(new \InvalidArgumentException("this title is invalid"));
 	}
 //verify the article title will fit in the database
@@ -235,7 +235,7 @@ public function setArticleTitle( $newArticleTitle) : void {
 	//convert and store the new title
 	$this->articleTitle = $newArticleTitle;
 }
-};
+
 
 /*
 PDO
@@ -245,18 +245,18 @@ here:
 
 public function insert(\PDO $pdo) : void {
 
-	$query = "INSERT INTO Article(articleAuthorId, articleId, articleFilterId, articleDatePublished,
+		$query = "INSERT INTO Article(articleAuthorId, articleId, articleFilterId, articleDatePublished,
 articleDescription, articleTitle) VALUES(:articleAuthorId, :articleId, :articleFilterId, :articleDatePublished,
 :articleDescription, :articleTitle)";
-	$statement = $pdo->prepare($query);
+		$statement = $pdo->prepare($query);
 
 // bind the member variables to the place holders in the template
-	$parameters = ["articleAuthorId" => $this->articleAuthorId->getBytes(), "articleId" => $this->articleId->getBytes(),
-		"articleFilterId" => $this->articleFilterId, "articleDatePublished" => $this->articleDatePublished,
-		"articleDescription" => $this->articleDescription, "articleTitle" => $this->articleTitle];
+		$parameters = ["articleAuthorId" => $this->articleAuthorId->getBytes(), "articleId" => $this->articleId->getBytes(),
+			"articleFilterId" => $this->articleFilterId, "articleDatePublished" => $this->articleDatePublished,
+			"articleDescription" => $this->articleDescription, "articleTitle" => $this->articleTitle];
 
-	$statement->execute($parameters);
-}
+		$statement->execute($parameters);
+	}
 
 /**
  * deletes this Article from mySQL
@@ -471,4 +471,4 @@ $fields["articleAuthorId"] = $this->articleAuthorId->toString();
 
 return($fields);
 }
-};
+}
