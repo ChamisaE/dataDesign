@@ -235,7 +235,5 @@ public function setArticleTitle( $newArticleTitle) : void {
 	//convert and store the new title
 	$this->articleTitle = $newArticleTitle;
 }
-}
-
-
+};
 
